@@ -32,8 +32,13 @@ vagrant ssh
 psql -d news -f newsdata.sql
 ```
 
-4. Setup below 4 view(s) in "news" database.
+4. Connect news database and setup below 4 view(s) in "news" database.
 
+- Connect news database
+```bash
+psql news
+
+```
 - v_map
 ```
 create view v_map as
@@ -106,7 +111,9 @@ from log
 group by day 
 order by percentage desc;  
 ```
-
+```
+commit
+```
 
 
 ## Usage
@@ -126,4 +133,5 @@ On which days did more than 1% of requests lead to errors?
 ## Author
 
 [mrsmmori](https://github.com/mrsmmori)
+
 
